@@ -5,7 +5,7 @@ import os
 from huggingface_hub import HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 
-repo_id = "haseena84/Wellness-Tourism-Package-Customer-Prediction"
+repo_id = "haseena84/Wellness-Tourism-Package-Customer-Prediction-dummy"
 repo_type = "dataset"
 
 # Initialize API client
@@ -25,7 +25,7 @@ except RepositoryNotFoundError:
 
 
 api.upload_folder(
-    folder_path="wellness_tourism_package_customer_prediction/data",
+    folder_path="wellness_tourism_package_customer_prediction_dummy/data",
     repo_id=repo_id,
     repo_type=repo_type,
 )
