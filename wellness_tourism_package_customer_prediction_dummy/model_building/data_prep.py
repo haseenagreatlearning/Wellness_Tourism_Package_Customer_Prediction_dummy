@@ -6,14 +6,14 @@ from sklearn.model_selection import train_test_split
 from huggingface_hub import HfApi
 
 
-DATASET_REPO_ID = "haseena84/Wellness-Tourism-Package-Customer-Prediction"
+DATASET_REPO_ID = "haseena84/Wellness-Tourism-Package-Customer-Prediction-dummy"
 REPO_TYPE = "dataset"
 
 # Initializing HF API Client
 api = HfApi(token=os.getenv("HF_TOKEN"))
 
 # Loading dataset from HF
-DATASET_PATH = "hf://datasets/haseena84/Wellness-Tourism-Package-Customer-Prediction/tourism.csv"
+DATASET_PATH = "hf://datasets/haseena84/Wellness-Tourism-Package-Customer-Prediction-dummy/tourism.csv"
 df = pd.read_csv(DATASET_PATH)
 
 
@@ -44,6 +44,6 @@ for file_path in files:
     api.upload_file(
         path_or_fileobj=file_path,
         path_in_repo=file_path.split("/")[-1],
-        repo_id="haseena84/Wellness-Tourism-Package-Customer-Prediction",
+        repo_id="haseena84/Wellness-Tourism-Package-Customer-Prediction-dummy",
         repo_type="dataset",
     )
